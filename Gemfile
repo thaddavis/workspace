@@ -7,6 +7,8 @@ gem 'rails', '~> 5.0.0'
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+# Awesome Print Gem
+gem 'awesome_print'
 # Bootstrap Saas gem for Styling
 gem 'bootstrap-sass', '~> 3.3.6'
 # Use Uglifier as compressor for JavaScript assets
