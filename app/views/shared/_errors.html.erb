@@ -1,0 +1,12 @@
+<% if obj.errors.any? %>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 alert alert-danger">
+      <ul>
+        <% obj.errors.full_messages.each do |m| %>
+          <li> <%= m %> </li>
+        <% end %>
+      </ul>
+      <a class="close" data-dismiss="alert">&#215;</a>
+    </div>
+  </div>
+<% end %>
