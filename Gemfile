@@ -7,6 +7,9 @@ gem 'rails', '~> 5.0.0'
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+# Image uploader gems
+gem 'carrierwave'
+gem 'mini_magick'
 # Awesome Print Gem
 gem 'awesome_print'
 # Bootstrap Saas gem for Styling

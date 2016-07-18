@@ -8,6 +8,7 @@
 
 .gravatar {
   border-radius: 10px;
+  margin: 10px;
 }
 
 input, textarea, select, .uneditable-input {
@@ -18,4 +19,8 @@ input, textarea, select, .uneditable-input {
 
 input {
   height: auto !important;
+}
+
+.picture {
+  margin: 10px;
 }
