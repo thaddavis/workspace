@@ -10,6 +10,7 @@ gem 'sass-rails', '~> 5.0'
 # Image uploader gems
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'fog'
 # Pagination Gems
 gem 'will_paginate', '>= 3.1'
 gem 'bootstrap-will_paginate'
