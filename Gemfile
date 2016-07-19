@@ -10,6 +10,9 @@ gem 'sass-rails', '~> 5.0'
 # Image uploader gems
 gem 'carrierwave'
 gem 'mini_magick'
+# Pagination Gems
+#gem 'will_paginate', :git => 'https://github.com/kirs/will_paginate.git'
+#gem 'bootstrap-will_paginate'
 # Awesome Print Gem
 gem 'awesome_print'
 # Bootstrap Saas gem for Styling

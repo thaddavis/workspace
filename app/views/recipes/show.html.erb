@@ -24,6 +24,7 @@
           </strong>
         </p>
         <%= simple_format(@recipe.description) %>
+        <%= render 'up_down_vote', obj: @recipe %>
       </div>
     </div>
   </div>
