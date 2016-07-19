@@ -12,7 +12,8 @@ gem 'carrierwave'
 gem 'mini_magick'
 # Pagination Gems
 #gem 'will_paginate', :git => 'https://github.com/kirs/will_paginate.git'
-#gem 'bootstrap-will_paginate'
+gem 'will_paginate', '>= 3.1'
+gem 'bootstrap-will_paginate'
 # Awesome Print Gem
 gem 'awesome_print'
 # Bootstrap Saas gem for Styling

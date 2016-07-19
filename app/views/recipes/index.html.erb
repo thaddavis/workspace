@@ -1,6 +1,8 @@
 <div class="container">
   <%= render 'shared/page_title', title: 'All Recipes' %>
 
+  <%= will_paginate %>
+
   <% @recipes.each do |r| %>
     <div class="row">
 
@@ -12,7 +14,9 @@
         <h4><%= link_to r.name, recipe_path(r) %></h4>
         <p><%= r.summary %></p>
         <p>
-          <span class="quiet"><small> <%= time_ago_in_words(r.created_at) %> ago </small></span>
+          <span class="quiet"><small> created: <%= time_ago_in_words(r.created_at) %> ago </small></span>
+          |
+          <span class="quiet"><small> updated: <%= time_ago_in_words(r.updated_at) %> ago </small></span>
         </p>
 
         <%= render 'up_down_vote', obj: r %>
@@ -26,5 +30,7 @@
       </div>
     </div>
   <% end %>
+
+  <%= will_paginate %>
 
 </div>
