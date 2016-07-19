@@ -1,0 +1,56 @@
+<div class="container">
+
+  <%= render 'shared/page_title', title: @chef.chefname %>
+
+  <div class="row">
+
+    <div class="well col-md-8 col-md-offset-2">
+
+      <div class="pull-right">
+        <%= gravatar_for @chef, size: 200 %>
+      </div>
+
+      <%= link_to "Edit Chef", edit_chef_path(@chef) %>
+
+      <%= form_for @chef do |f| %>
+        <%= f.label :chefname %>
+        <%= f.text_field :chefname %>
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- -->
+  <h1 class="text-center">Recipes</h1>
+
+  <%= will_paginate @recipes %>
+  <% @recipes.each do |r| %>
+    <div class="row">
+      <div class="col-md-8">
+        <h3>
+          <%= r.summary %>
+        </h3>
+        <div class="show_recipe">
+          <%= image_tag(r.picture.url, class: 'gravatar') if r.picture? %>
+        </div>
+        <div class="well">
+          <p>
+            <strong>
+              Steps:
+            </strong>
+          </p>
+          <%= simple_format(r.description) %>
+          <%= render 'recipes/up_down_vote', obj: r %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <%= will_paginate @recipes %>
+  <!-- -->
+
+  <hr/>
+
+  <h5><%= link_to 'Return to all chefs', chefs_path, class: "btn btn-warning btn-small" %></h5>
+
+</div>

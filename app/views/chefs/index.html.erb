@@ -1,0 +1,21 @@
+<div class="container">
+  <%= render 'shared/page_title', title: 'All Chefs' %>
+
+  <%= will_paginate %>
+
+  <% @chefs.each do |c| %>
+    <div class="row">
+
+      <div class="pull-right">
+        <%= link_to (gravatar_for c, size: 200), chef_path(c) %>
+      </div>
+
+      <%= link_to "Edit Chef", edit_chef_path(c) %>
+      <br/>
+      Chefname: <%= c.chefname %>
+    </div>
+  <% end %>
+
+  <%= will_paginate %>
+
+</div>

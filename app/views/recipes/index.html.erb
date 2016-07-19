@@ -24,7 +24,7 @@
 
       <div class="col-md-2 pull-right">
         <section class="chef_info center">
-          <%= gravatar_for r.chef, size: 100 %>
+          <%= link_to (gravatar_for r.chef, size: 100), chef_path(r.chef) %>
           <h5>Chef Name: <%= r.chef.chefname %></h5>
         </section>
       </div>

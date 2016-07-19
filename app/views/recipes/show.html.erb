@@ -4,13 +4,15 @@
 
   <div class="row">
     <div class="col-md-4 pull-right center">
-      <%= gravatar_for @recipe.chef, size: 200 %>
+      <%= link_to (gravatar_for @recipe.chef, size: 200), chef_path(@recipe.chef) %>
       <p>
         <h5><%= @recipe.chef.chefname %></h5>
       </p>
     </div>
     <div class="col-md-8">
-      <%= link_to "Edit recipe", edit_recipe_path(@recipe) %>
+      <% if logged_in? && @recipe.chef == current_user %>
+        <%= link_to "Edit recipe", edit_recipe_path(@recipe) %>
+      <% end %>
       <h3>
         <%= @recipe.summary %>
       </h3>
