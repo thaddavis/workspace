@@ -20,4 +20,7 @@ Rails.application.routes.draw do
   #post login -> create session
   post '/login', to: 'logins#create'
 
+  resources :styles, only: [:new, :create, :show]
+  resources :ingredients, only: [:new, :create, :show]
+
 end

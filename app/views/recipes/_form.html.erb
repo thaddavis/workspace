@@ -10,6 +10,14 @@
     <%= f.label :description %>
     <%= f.text_area :description %>
 
+    <br/>
+    <br/>
+    <strong>Styles:</strong>
+    <%= f.collection_check_boxes :style_ids, Style.all, :id, :name do |cb| %>
+      <% cb.label(class: 'checkbox-inline') { cb.check_box(class: "checkbox") + cb.text } %>
+    <% end %>
+    <br/>
+
     <span class="picture">
       <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
     </span>

@@ -16,48 +16,19 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Our Collection of Templates &amp; Themes">Themes <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Our Collection of Cooking Styles">Styles <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li>
-                            <a href="/template-categories/all"><i class="fa fa-globe fa-fw"></i> All Templates &amp; Themes</a>
-                        </li>
-                        <li>
-                            <a href="/template-categories/popular"><i class="fa fa-star fa-fw"></i> Most Popular</a>
-                        </li>
-                        <li>
-                            <a href="/buy-bootstrap-templates"><i class="fa fa-shopping-cart fa-fw"></i> Buy Bootstrap Templates</a>
-                        </li>
+                      <% Style.all.each do |s| %>
+                        <li><%= link_to s.name, style_path(s) %></li>
+                      <% end %>
+                      <% if logged_in? %>
                         <li class="divider"></li>
-                        <li class="dropdown-header">
-                            Template &amp; Theme Categories:
-                        </li>
                         <li>
-                            <a href="/template-categories/admin-dashboard">Admin and Dashboard</a>
+                            <%= link_to(new_style_path) do %>
+                                New Style
+                            <% end %>
                         </li>
-                        <li>
-                            <a href="/template-categories/full-websites">Full Websites</a>
-                        </li>
-                        <li>
-                            <a href="/template-categories/landing-pages">Landing Pages</a>
-                        </li>
-                        <li>
-                            <a href="/template-categories/one-page">One Page Websites</a>
-                        </li>
-                        <li>
-                            <a href="/template-categories/portfolios">Portfolios</a>
-                        </li>
-                        <li>
-                            <a href="/template-categories/blogs">Blogs</a>
-                        </li>
-                        <li>
-                            <a href="/template-categories/ecommerce">Ecommerce</a>
-                        </li>
-                        <li>
-                            <a href="/template-categories/unstyled">Unstyled Starter Templates</a>
-                        </li>
-                        <li>
-                            <a href="/template-categories/navigation-menus">Navigation and Navbars</a>
-                        </li>
+                      <% end %>
                     </ul>
                 </li>
 
@@ -77,7 +48,7 @@
             <% if logged_in? %>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Premium Bootstrap Themes &amp; Templates">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="User Options">
                             <i class="fa fa-star text-yellow"></i>
                             <%= current_user.chefname %>
                             <b class="caret"></b>

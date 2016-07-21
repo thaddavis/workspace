@@ -1,5 +1,5 @@
 <div class="container">
-  <%= render 'shared/page_title', title: 'All Recipes' %>
+  <%= render 'shared/page_title', title: 'Recipes with: ' + @ingredient.name %>
 
   <ul class="nav nav-tabs">
     <li class="active">
@@ -10,11 +10,11 @@
     </li>
   </ul>
 
-  <%= will_paginate %>
+  <%= will_paginate @recipes %>
 
   <br/>
 
-  <% @recipes.each do |r| %>
+  <% @ingredient.recipes.each do |r| %>
     <div class="row">
 
       <div class="col-md-4">
@@ -32,7 +32,7 @@
           <span class="quiet"><small> updated: <%= time_ago_in_words(r.updated_at) %> ago </small></span>
         </p>
 
-        <%= render 'up_down_vote', obj: r %>
+        <%= render 'recipes/up_down_vote', obj: r %>
       </div>
 
       <div class="col-md-2 pull-right">
@@ -44,6 +44,6 @@
     </div>
   <% end %>
 
-  <%= will_paginate %>
+  <%= will_paginate @recipes %>
 
 </div>
